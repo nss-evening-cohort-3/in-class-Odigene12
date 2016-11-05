@@ -1,16 +1,23 @@
 ﻿var app = angular.module("MyApp", []);
 
-app.controller("FormController", function ($scope) {
+app.controller("FormController", function ($scope, $http) {
    
+    $scope.user = {
+        email: "",
+        password: "",
+        passwordconfirmation: ""
+    }
 
     $scope.postAjax = function () {
-        var myData = $("#myForm").serialize();
-        $.post("/api/AngularApi", myData, function (data, textStatus, jqXHR) {
-            $(".result").html(data)
-            console.log("success")
-            console.log($(".result").html(data))
-        }).fail(function (error) {
-            console.log(error)
+        var myData = $("#myForm").serializeArray();
+
+        $http({
+            method: "POST",
+            url: "/api/AngularApi",
+            data: myData,
+            datatype: JSON
+        }).then(function (response) {
+            console.log(response)
         })
      
 
