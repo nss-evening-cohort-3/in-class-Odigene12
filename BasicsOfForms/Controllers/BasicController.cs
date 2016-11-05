@@ -32,5 +32,10 @@ namespace BasicsOfForms.Controllers
             var yaahhh = "yahhh";
             return View();
         }
+
+        public ActionResult Angular()
+        {
+            return View();
+        }
     }
 }
