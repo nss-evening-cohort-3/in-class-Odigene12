@@ -9,9 +9,9 @@ namespace BasicsOfForms.Controllers
 {
     public class AngularApiController : ApiController
     {
-        public void Post([FromBody] dynamic thing)
+        public void Post([FromBody] dynamic data)
         {
-            
+            var code = "yay";
         }
     }
 }
