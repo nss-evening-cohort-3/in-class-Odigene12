@@ -3,7 +3,7 @@
 app.controller("FormController", function ($scope) {
 
     $scope.formSubmit = function () {
-
+        alert("CLICKED DAT BUTTON!!!")
     }
 
 });
